@@ -76,14 +76,14 @@
     `startnum` not supplied
     ```javascript
     __invalid: {
-      "deptconsol": "field is required"
+      "start_num": "field is required"
     }
     ```
     
     `startnum` not a valid boolean
     ```javascript
     __invalid: {
-      "deptconsol": "startnum must be number or 'all'"
+      "start_num": "startnum must be number or 'all'"
     }
     ```
     
@@ -91,7 +91,7 @@
 
   ```javascript
     { 
-      "deptconsol":"true"
+      "start_num":"all"
     }
   ```
 
