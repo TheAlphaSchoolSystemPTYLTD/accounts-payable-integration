@@ -80,7 +80,7 @@
     }
     ```
     
-    `startnum` not a valid boolean
+    `startnum` not a valid number or "all"
     ```javascript
     __invalid: {
       "start_num": "startnum must be number or 'all'"
