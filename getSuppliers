@@ -153,6 +153,6 @@
       <input type="hidden" name="appcode" value="DEMOAP">
       <input type="hidden" name="company" value="10">
       <input type="hidden" name="v" value="2">
-      <textarea name="token">SCpxAeg8YeBS20KW%2Bjr%2BqGxFcFUU2xGwW8DZkaR21m4%3D</textarea>
+      <textarea name="token">SCpxAeg8YeBS20KW+jr+qGxFcFUU2xGwW8DZkaR21m4=</textarea>
     </form>
   ```
