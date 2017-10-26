@@ -1,6 +1,6 @@
 **getTaxCodes**
 ----
-  Returns array of structured tax code data comprising tax code, tax description, tax percentage and calculation method in JSON format.
+  Returns an array of structured tax code data comprising tax code, tax description, tax percentage and calculation method in JSON format.
 
 * **Version:**
 
