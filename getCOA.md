@@ -1,6 +1,6 @@
 **getCOA**
 ----
-  Returns array of structured general ledger account data comprising account code, account description, account type, tax code in JSON format.
+  Returns an array of structured general ledger account data comprising account code, account description, account type, tax code in JSON format.
 
 * **Version:**
 
