@@ -66,7 +66,7 @@
     `ap` not true
     ```javascript
     __invalid: {
-      "ap": "deptconsol must be true"
+      "ap": "ap must be true"
     }
     ```
     
