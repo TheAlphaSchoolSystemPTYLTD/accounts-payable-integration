@@ -16,6 +16,14 @@
  
    `startnum [integer or "all"]` - Start position. Must be a number or "all".
 
+   **Optional:**
+
+   none
+
+   **Conditional:**
+
+   none
+
 * **Success Response:**
 
     ```javascript

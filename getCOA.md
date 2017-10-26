@@ -16,6 +16,14 @@
  
    `date [date dd/mm/yyyy]`
 
+   **Optional:**
+
+   none
+
+   **Conditional:**
+
+   none
+
 * **Success Response:**
 
     ```javascript

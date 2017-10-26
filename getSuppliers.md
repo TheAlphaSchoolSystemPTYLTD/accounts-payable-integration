@@ -12,14 +12,18 @@
   
 *  **Params:**
 
-   **Conditional:**
- 
-   `active [boolean]` - Required if no code, ignored if code provided. 
-                        True of false for whether returning active or inactive suppliers.
+   **Required:**
+
+   none
    
    **Optional:**
    
    `code [string]` - Supplier code
+
+   **Conditional:**
+ 
+   `active [boolean]` - Required if no code, ignored if code provided. 
+                        True of false for whether returning active or inactive suppliers.
 
 * **Success Response:**
 

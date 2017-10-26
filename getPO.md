@@ -18,6 +18,14 @@
    
    `code [string]` - Supplier code
 
+   **Optional:**
+
+   none
+
+   **Conditional:**
+
+   none
+
 * **Success Response:**
 
     ```javascript

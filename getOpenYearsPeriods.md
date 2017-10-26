@@ -16,6 +16,14 @@
  
    `ap [boolean]` - Must be true.
 
+   **Optional:**
+
+   none
+
+   **Conditional:**
+
+   none
+
 * **Success Response:**
 
     ```javascript

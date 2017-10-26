@@ -1,4 +1,4 @@
-**setGLInvoice**
+**setPOInvoice**
 ----
   Returns "Success" and document number "vouch_code" if the invoice successfully created, or a structure of invalid validations "__invalid" if the invoice is unsuccessfully created.
 
@@ -22,19 +22,13 @@
 
    `invoice_amount [decimal]` - Invoice Amount
 
-   `comment_1 [string]` - Comment 1
+   `id [string]` - Unique Identity of PO Line
 
-   `id [string]` - Unique Identity of GL Distribution
+   `ponum [number]` - PO Number of PO Line
 
-   `account_code [string]` - GL Account of GL Distribution
+   `linenum [number]` - Line Number of PO Line
 
-   `desc_text [string]` - Description Text of GL Distribution
-
-   `dist_amount [decimal]` - Distribution Amount of GL Distribution
-
-   `tax_amount [decimal]` - Tax Amount of GL Distribution
-
-   `tax_code [string]` - Tax Code of GL Distribution
+   `quantity [decimal]` - Quantity of PO Line
 
    **Optional:**
    
@@ -48,9 +42,11 @@
 
    `hold_code [string]` - Hold Payment Code
 
+   `comment_1 [string]` - Comment 1
+
    `comment_2 [string]` - Comment 2
 
-   `gldistributions [array]` - Array of GL Distributions
+   `polines [array]` - Array of PO Lines
 
    **Conditional:**
 
@@ -60,7 +56,7 @@
 
     ```javascript
     "success": "Invoice created successfully.",
-    "vouch_code": 672
+    "vouch_code": 673
     ```
  
 * **Error Response:**
@@ -83,6 +79,13 @@
     ```javascript
     __invalid: {
       "[field_name]": "Value is not a valid integer."
+    }
+    ```
+
+    Number `[field_name]` not a valid number
+    ```javascript
+    __invalid: {
+      "[field_name]": "Value is not a valid number."
     }
     ```
 
@@ -212,112 +215,85 @@
     }
     ```
 
-    `account_code` must be a valid GL Account and not a Bank or Control Account
+    `ponum` not a valid PO Number
     ```javascript
     __invalid: {
-      "account_code": "GL Account is invalid."
+      "ponum": "PO Number is invalid."
     }
     ```
 
-    `account_code` not an "open" account
+    `ponum` not a valid PO Number for that Supplier Code
     ```javascript
     __invalid: {
-      "account_code": "GL Account must be open."
+      "ponum": "PO Number does not match Supplier Code."
     }
     ```
 
-    `desc_text` exceed 4000 characters
+    `linenum` not a line number that has an outstanding quantity greater than 0.00 for this `ponum`
     ```javascript
     __invalid: {
-      "desc_text": "Value exceeds 4000 characters."
+      "linenum": "Line Number is invalid."
     }
     ```
 
-    `dist_amount` equal 0.00
+    `quantity` less than or equal 0.00
     ```javascript
     __invalid: {
-      "dist_amount": "Distribution Amount is invalid."
+      "quantity": "Quantity is invalid."
     }
     ```
 
-    `dist_amount` has more than 2 decimal points
+    `quantity` has more than 2 decimal points
     ```javascript
     __invalid: {
-      "dist_amount": "Value has more than 2 decimal points."
+      "quantity": "Value has more than 2 decimal points."
     }
     ```
 
-    `tax_amount` has more than 2 decimal points
+    `quantity` greater than Outstanding Quantity for that line
     ```javascript
     __invalid: {
-      "tax_amount": "Value has more than 2 decimal points."
+      "quantity": "Quantity exceeds Outstanding Quantity."
     }
-    ```
-
-    `tax_amount` must be >= 0.00 if `dist_amount` > 0.00, or must be <= 0.00 if `dist_amount` < 0.00
-    ```javascript
-    __invalid: {
-      "tax_amount": "Tax Amount is invalid."
-    }
-    ```
-
-    `tax_amount` must be <= `dist_amount` if `dist_amount` > 0.00, or must be >= `dist_amount` if `dist_amount` < 0.00
-    ```javascript
-    __invalid: {
-      "tax_amount": "Tax Amount is greater than Distribution Amount."
-    }
-    ```
-
-    `tax_code` not a valid tax code in "tax" table
-    ```javascript
-    __invalid: {
-      "tax_code": "Tax Code is invalid."
-    }
-    ```
     
 * **Sample Parameters:**
 
   ```javascript
-    {
-        "supplier_code":"ABCSTAT"
-        ,"invoice_number":"test1"
-        ,"invoice_date":"27/07/2017"
-        ,"invoice_amount":"2"
-        ,"comment_1":"test creating invoices"
-        ,"gldistributions":[
-            {
-                "id":"1"
-                ,"account_code":"01-1330-00-00"
-                ,"desc_text":"first distribution"
-                ,"dist_amount":"1.24"
-                ,"tax_amount":"0.04"
-                ,"tax_code":"AO"
-            },{ 
-                "id":"2"
-                ,"account_code":"01-1330-00-00"
-                ,"desc_text":"second distribution"
-                ,"dist_amount":"0.76"
-                ,"tax_amount":"0.02"
-                ,"tax_code":"WHT"
-            }
-        ]
-    }
+  {
+    "supplier_code":"GOLF02"
+    ,"invoice_number":"testPO1"
+    ,"invoice_date":"31/08/2017"
+    ,"invoice_amount":"16.47"
+    ,"polines":[
+      {
+        "id":"1"
+        ,"ponum":"404"
+        ,"linenum":"1"
+        ,"quantity":"1"
+      },{
+        "id":"2"
+        ,"ponum":"404"
+        ,"linenum":"2"
+        ,"quantity":"2"
+      }
+    ]
+  }
   ```
 
 * **Sample GET:** (With URL Encoded `token`)
 
   ```HTML
-    http://api.tasscloud.com.au/tassweb/api/?method=SetGLInvoice&appcode=DEMOAP&company=10&v=2&token=BJVvYXC0We4Dtvp6Q49RqhBeAi6uqpTQ9t%2FKI9ZAFpCMeVXIFlDU5yNQIeYME%2BYLXgYA69RTUjXjLeVBetN6CaFMdPCKMWBXD%2Bkkt0%2Fuht0suYrSDONP6mx%2Fbt4WGgNOD5YoIYRNiIVDw2Qn2Oi5YodaEUgtGJohUJMzy3tqsX%2BraZk3j7d77okDCjb7MeFJ0DcupqUoRiGjE39415HTfPgNc6R6BY9wt7SJsj4yOPBrIxHQVS8Yy6gZ3nZgsJ5rhcdkB6eCI6b3FJ31s6vsVcbVu5NBY8AF1qqjWLMazduISzEBwRDsofXfJjo1KLX59R410bmbrF5Z7QZfEfE%2FlettTWOyb4EgdhBoC3v0aLOfF6Bt12AFXDo2VGbgryceeOLAscp%2FFr9ttH42hClBtWsxFU1N5dDENUsVHOwWcfCxd7aTtc0xjvaEYJWcZrRRZa1yrIvgeWaDk0LVxM5ePcT%2BltdrymgmxmZYgxdiYC1qQDcNXDx9hN7yKeZDUztwGA0yl2iXW8aBXAy5hRnztR0TrREyOba26mUHxUJO7tfpIyOrpPbE0nR18vtCZ%2BinbvyqN9adpZhQPByG2XD9M6MoYdmBCc3Duv9qb%2BIa0A8%3D
+    http://api.tasscloud.com.au/tassweb/api/?method=SetPOInvoice&appcode=DEMOAP&company=10&v=2&token=kcUOlOdvmnSHUU%2BjwVtflKZL6G9SGyuymxRhJtXlXlDFwU%2F5Ik%2FXw5ntBA45Hnuikem7iU%2BQ9bha9u3UF73AsaQgJCEsB6Lhsiei2v4MYMbPSL0793g5K3s7XF4vn5CjCAH25YXiwaNet7La1eI91LomNJaLAA52j8ybQTOTe6T0LlW7l4B6%2BKQkgFZJXluQwmkmbZJvqkxUfJ1My%2BaAkL0V5b%2BV%2F2yaOzS2ZAagpDuE%2BU%2BCkVqZZiA5QddaviWa0qh6F9JlOFl7Mwn5QIzlf7%2FzastBaOVIBPPA8NrPOI5xm5A27Qxb4t9nv4HRNHm2JXpG5HnyIiClU5UOd0731SrZ6Cl%2B5N99tDreN7xJgCQ%3D
   ```
   
 * **Sample POST:**
 
   ```HTML
     <form id="postForm" name="postForm" method="POST" action="http://api.tasscloud.com.au/api/">
-       <input type="hidden" name="method" value="setGLInvoice">
+       <input type="hidden" name="method" value="setPOInvoice">
        <input type="hidden" name="appcode" value="DEMOAP">
        <input type="hidden" name="company" value="10">
        <input type="hidden" name="v" value="2">
-       <textarea name="token">BJVvYXC0We4Dtvp6Q49RqhBeAi6uqpTQ9t/KI9ZAFpCMeVXIFlDU5yNQIeYME+YLXgYA69RTUjXjLeVBetN6CaFMdPCKMWBXD+kkt0/uht0suYrSDONP6mx/bt4WGgNOD5YoIYRNiIVDw2Qn2Oi5YodaEUgtGJohUJMzy3tqsX+raZk3j7d77okDCjb7MeFJ0DcupqUoRiGjE39415HTfPgNc6R6BY9wt7SJsj4yOPBrIxHQVS8Yy6gZ3nZgsJ5rhcdkB6eCI6b3FJ31s6vsVcbVu5NBY8AF1qqjWLMazduISzEBwRDsofXfJjo1KLX59R410bmbrF5Z7QZfEfE/lettTWOyb4EgdhBoC3v0aLOfF6Bt12AFXDo2VGbgryceeOLAscp/Fr9ttH42hClBtWsxFU1N5dDENUsVHOwWcfCxd7aTtc0xjvaEYJWcZrRRZa1yrIvgeWaDk0LVxM5ePcT+ltdrymgmxmZYgxdiYC1qQDcNXDx9hN7yKeZDUztwGA0yl2iXW8aBXAy5hRnztR0TrREyOba26mUHxUJO7tfpIyOrpPbE0nR18vtCZ+inbvyqN9adpZhQPByG2XD9M6MoYdmBCc3Duv9qb+Ia0A8=</textarea>
+       <textarea name="token">kcUOlOdvmnSHUU+jwVtflKZL6G9SGyuymxRhJtXlXlDFwU/5Ik/Xw5ntBA45Hnuikem7iU+Q9bha9u3UF73AsaQgJCEsB6Lhsiei2v4MYMbPSL0793g5K3s7XF4vn5CjCAH25YXiwaNet7La1eI91LomNJaLAA52j8ybQTOTe6T0LlW7l4B6+KQkgFZJXluQwmkmbZJvqkxUfJ1My+aAkL0V5b+V/2yaOzS2ZAagpDuE+U+CkVqZZiA5QddaviWa0qh6F9JlOFl7Mwn5QIzlf7/zastBaOVIBPPA8NrPOI5xm5A27Qxb4t9nv4HRNHm2JXpG5HnyIiClU5UOd0731SrZ6Cl+5N99tDreN7xJgCQ=</textarea>
     </form>
   ```

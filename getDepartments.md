@@ -16,6 +16,14 @@
  
    `deptconsol [boolean]` - Must be true for returning only departments being able to be consolidated.
 
+   **Optional:**
+
+   none
+
+   **Conditional:**
+
+   none
+
 * **Success Response:**
 
     ```javascript

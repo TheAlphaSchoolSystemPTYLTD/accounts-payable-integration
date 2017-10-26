@@ -16,6 +16,11 @@
  
    `ap [boolean]` - Must be true.
 
+   **Conditional:**
+ 
+   `active [boolean]` - Required if no code, ignored if code provided. 
+                        True of false for whether returning active or inactive suppliers.
+
 * **Success Response:**
 
     ```javascript

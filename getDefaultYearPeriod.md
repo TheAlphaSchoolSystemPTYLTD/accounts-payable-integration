@@ -16,6 +16,14 @@
  
    `date [date dd/mm/yyyy]` - Invoice date
 
+   **Optional:**
+
+   none
+
+   **Conditional:**
+
+   none
+
 * **Success Response:**
 
     ```javascript
