@@ -1,6 +1,6 @@
 **getSegments**
 ----
-  Returns array of structured segment data comprising segment start position, segment name, segment code and segment description in JSON format.
+  Returns an array of structured segment data comprising segment start position, segment name, segment code and segment description in JSON format.
 
 * **Version:**
 
