@@ -3,14 +3,14 @@ Accounts Payable Integration API
 
 **Methods**
 
-  * getSuppliers
-  * getDepartments
-  * getSegments
-  * getPO
   * getCOA
-  * getTaxCodes
   * getDefaultDueDate
   * getDefaultYearPeriod
+  * getDepartments
   * getOpenYearsPeriods
+  * getPO
+  * getSegments
+  * getSuppliers
+  * getTaxCodes
   * setGLInvoice
   * setPOInvoice
