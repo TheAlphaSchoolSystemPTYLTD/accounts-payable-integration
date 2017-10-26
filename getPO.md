@@ -1,6 +1,6 @@
 **getPO**
 ----
-  Returns array of structured purchase order data comprising PO number, line number, GL account, line description, outstanding quantity, tax code, line total, unit tax, unit cost excluding tax, and unit cost including tax in JSON format.
+  Returns an array of structured purchase order data comprising PO number, line number, GL account, line description, outstanding quantity, tax code, line total, unit tax, unit cost excluding tax, and unit cost including tax in JSON format.
 
 * **Version:**
 
