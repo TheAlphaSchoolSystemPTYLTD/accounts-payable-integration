@@ -22,7 +22,9 @@
 
    **Conditional:**
 
-   none
+   `start_num [string]` - `start_num` required if `flex_code` supplied
+
+   `flex_code [string]` - `flex_code` required if `start_num` supplied
 
 * **Success Response:**
 
@@ -38,6 +40,20 @@
     ```
  
 * **Error Response:**
+
+    `start_num` not supplied when `flex_code` supplied
+    ```javascript
+    __invalid: {
+      "start_num": "field is required"
+    }
+    ```
+
+    `flex_code` not supplied when `start_num` supplied
+    ```javascript
+    __invalid: {
+      "flex_code": "field is required"
+    }
+    ```
 
     `date` not supplied
     ```javascript
