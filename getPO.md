@@ -88,7 +88,7 @@
 * **Sample POST:**
 
   ```HTML
-  <form id="postForm" name="postForm" method="POST" action="http://api.tasscloud.com.au/tassweb/api/">
+  <form id="postForm" name="postForm" method="POST" action="http://api.tasscloud.com.au/tassweb/tassweb/api/">
      <input type="hidden" name="method" value="getPO">
      <input type="hidden" name="appcode" value="DEMOAP">
      <input type="hidden" name="company" value="10">
