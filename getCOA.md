@@ -22,7 +22,7 @@
 
    **Conditional:**
 
-   `start_num [string]` - `start_num` required if `flex_code` supplied
+   `start_num [integer]` - `start_num` required if `flex_code` supplied
 
    `flex_code [string]` - `flex_code` required if `start_num` supplied
 
@@ -45,6 +45,20 @@
     ```javascript
     __invalid: {
       "start_num": "field is required"
+    }
+    ```
+
+    `start_num` not a valid integer
+    ```javascript
+    __invalid: {
+      "start_num": "Value is not a valid integer."
+    }
+    ```
+
+    `start_num` not greater than 0
+    ```javascript
+    __invalid: {
+      "start_num": "start_num must be greater than 0"
     }
     ```
 
