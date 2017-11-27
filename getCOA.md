@@ -55,10 +55,10 @@
     }
     ```
 
-    `start_num` not a non-negative integer
+    `start_num` not greater than 0
     ```javascript
     __invalid: {
-      "start_num": "start_num must be a non-negative integer"
+      "start_num": "start_num must be greater than 0"
     }
     ```
 
