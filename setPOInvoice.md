@@ -54,6 +54,10 @@
 
   `attachment_file_name [string]` - Name of PDF attachment. Required where `attachment_file` supplied. If supplied, length must be between 1 and 255 Characters
 
+  `external_url [string]` - Required where `external_target` supplied
+
+  `external_target [string]` - Required where `external_url` supplied. If supplied, length must be between 1 and 50 Characters
+
 * **Success Response:**
 
     ```javascript
@@ -272,7 +276,7 @@
     }
     ```
 
-    `attachment_file_name` length less than 1 or greater than 255 characters
+    `attachment_file_name` length greater than 255 characters
     ```javascript
     __invalid: {
       "attachment_file_name": "attachment_file_name must be between 1 and 255 characters."
@@ -290,6 +294,27 @@
     ```javascript
     __invalid: {
       "attachment_file": "attachment_file must be a Base 64 encoded string representation of a PDF file."
+    }
+    ```
+
+    `external_url` not supplied where `external_target` is supplied
+    ```javascript
+    __invalid: {
+      "external_url": "external_url field is required where 'external_target' is supplied."
+    }
+    ```
+
+    `external_target` not supplied where `external_url` is supplied
+    ```javascript
+    __invalid: {
+      "external_target": "external_target field is required where 'external_url' is supplied."
+    }
+    ```
+
+    `external_target` length greater than 50 characters
+    ```javascript
+    __invalid: {
+      "external_target": "external_target must be between 1 and 50 characters."
     }
     ```
     
