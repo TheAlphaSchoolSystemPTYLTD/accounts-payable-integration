@@ -50,7 +50,9 @@
 
    **Conditional:**
 
-   none
+  `attachment_file [string]` - Base64 Encoded PDF File. Required where `attachment_file_name` supplied
+
+  `attachment_file_name [string]` - Name of PDF attachment. Required where `attachment_file` supplied. If supplied, length must be between 1 and 255 Characters
 
 * **Success Response:**
 
@@ -255,6 +257,41 @@
     __invalid: {
       "quantity": "Quantity exceeds Outstanding Quantity."
     }
+
+    `attachment_file_name` not supplied where `attachment_file` is supplied
+    ```javascript
+    __invalid: {
+      "attachment_file_name": "attachment_file_name field is required where 'attachment_file' is supplied."
+    }
+    ```
+
+    `attachment_file_name` not supplied where `attachment_file` is supplied
+    ```javascript
+    __invalid: {
+      "attachment_file_name": "attachment_file_name field is required where 'attachment_file' is supplied."
+    }
+    ```
+
+    `attachment_file_name` length less than 1 or greater than 255 characters
+    ```javascript
+    __invalid: {
+      "attachment_file_name": "attachment_file_name must be between 1 and 255 characters."
+    }
+    ```
+
+    `attachment_file` not supplied where `attachment_file_name` is supplied
+    ```javascript
+    __invalid: {
+      "attachment_file": "attachment_file field is required where 'attachment_file_name' is supplied."
+    }
+    ```
+
+    `attachment_file` is not a valid Base64 Encoded string representation of a PDF file
+    ```javascript
+    __invalid: {
+      "attachment_file": "attachment_file must be a Base 64 encoded string representation of a PDF file."
+    }
+    ```
     
 * **Sample Parameters:**
 
