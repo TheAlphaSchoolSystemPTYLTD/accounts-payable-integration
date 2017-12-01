@@ -58,6 +58,10 @@
 
 	`attachment_file_name [string]` - Name of PDF attachment. Required where `attachment_file` supplied. If supplied, length must be between 1 and 255 Characters
 
+	`external_url [string]` - Required where `external_target` supplied
+
+	`external_target [string]` - Required where `external_url` supplied. If supplied, length must be between 1 and 50 Characters
+
 * **Success Response:**
 
 	```javascript
