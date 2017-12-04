@@ -1,6 +1,6 @@
 **getIsInvoicePaid**
 ----
-	Returns a structure with one property to indicate if the specified invoice for the specified supplier has been paid
+Returns a structure with one property to indicate if the specified invoice for the specified supplier has been paid
 
 * **Version:**
 
