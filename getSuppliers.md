@@ -22,11 +22,12 @@
 
    **Conditional:**
 
-   `code [string]` - Supplier code
+   `code [string]` - Supplier Code. Invalid if `search` supplied.
 
-   `search [string]` - Text search for supplier code or supplier name or ABN
+   `search [string]` - Text search for supplier code or supplier name or ABN. 
+                       Invalid if `code` supplied.
  
-   `active [boolean]` - Required if no code, ignored if code provided. 
+   `active [boolean]` - Required if no `code`, ignored if code provided. 
                         True of false for whether returning active or inactive suppliers.
 
 * **Success Response:**
