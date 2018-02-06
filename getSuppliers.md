@@ -18,9 +18,13 @@
    
    **Optional:**
    
-   `code [string]` - Supplier code
+   none
 
    **Conditional:**
+
+   `code [string]` - Supplier code
+
+   `search [string]` - Text search for supplier code or supplier name or ABN
  
    `active [boolean]` - Required if no code, ignored if code provided. 
                         True of false for whether returning active or inactive suppliers.
