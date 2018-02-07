@@ -13,14 +13,12 @@
 *  **Params:**
 
    **Required:**
- 
-   `ponum [integer]` - Purchase order number. Must be a number.
    
    `code [string]` - Supplier code
 
    **Optional:**
 
-   none
+   `ponum [integer]` - Purchase order number. Must be a number.
 
    **Conditional:**
 
