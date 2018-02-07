@@ -54,13 +54,6 @@
     }
     ```
     
-    `ponum` not supplied
-    ```javascript
-    __invalid: {
-      "ponum": "field is required"
-    }
-    ```
-    
     `ponum` not a valid number
     ```javascript
     __invalid: {
