@@ -16,10 +16,13 @@
  
    `ap [boolean]` - Must be true.
 
+   **Optional:**
+
+   none
+
    **Conditional:**
- 
-   `active [boolean]` - Required if no code, ignored if code provided. 
-                        True of false for whether returning active or inactive suppliers.
+
+   none
 
 * **Success Response:**
 
