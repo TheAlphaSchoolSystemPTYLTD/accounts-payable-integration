@@ -2,6 +2,10 @@
 ----
   Returns a structured purchase order data comprising po number, status index, po printed flag, supplier code, abn, term code and description, structured address details, po date, due date, authority, deliver to, structured deliver to address details, requisition number, contact, entered by and on, comment, structured ud fields, and array of po lines in JSON format.
 
+* **Version History:**
+
+    TASS v49.1 - Method Added
+
 * **Version:**
 
   2
