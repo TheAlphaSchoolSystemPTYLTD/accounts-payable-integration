@@ -2,6 +2,10 @@
 ----
   Returns an array of structured purchase order data comprising PO number, line number, GL account, line description, outstanding quantity, tax code, line total, unit tax, unit cost excluding tax, and unit cost including tax in JSON format.
 
+* **Version History:**
+
+    TASS v48.0 - Method Added
+
 * **Version:**
 
   2
