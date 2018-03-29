@@ -33,76 +33,86 @@
     ```javascript
     "purchaseorder": {
       "deliver_to_address": {
-        "addr3_text": "BOWEN HILLS QLD 4006",
+        "addr3_text": "Toowoomba",
         "country_text": "",
-        "city_text": "",
+        "city_text": "QLD 4350",
         "post_code": "",
-        "addr_name": "Alpha Demonstration School",
-        "addr1_text": "Boarding House",
-        "addr2_text": "31 Thompson St",
+        "addr_name": "Alpha School Oval",
+        "addr1_text": "Cnr Webster & James Streets",
+        "addr2_text": "(side entrance)",
         "state_code": "",
         "country_code": ""
       },
-      "terms_desc": "Payment due within 30 days",
+      "terms_desc": "Payment due within 21 days",
       "contact": "",
-      "due_date": "20/03/2013",
-      "term_code": 30,
-      "status_index": "O",
+      "due_date": "31/08/2017",
+      "term_code": 21,
+      "status_index": "P",
       "comment": "",
-      "authority": "AJ",
-      "entered_by": "AJ",
+      "authority": "",
+      "entered_by": "ale",
       "ud": {
-        "pur3_flg": "Y",
         "pur1_desc": "Budget Checked",
-        "pur6_desc": "",
-        "pur4_desc": "",
-        "pur4_text": "Oval",
-        "pur2_desc": "Manager Approval",
-        "pur5_desc": "",
-        "pur5_text": "Yes",
-        "pur1_flg": "Y",
-        "pur3_desc": "Process Observed",
-        "pur2_flg": "Y",
-        "pur6_text": ""
+        "pur4_desc": "Location",
+        "pur4_text": "Brisbane",
+        "pur2_desc": "Policy Followed",
+        "pur1_flg": "",
+        "pur2_flg": "Y"
       },
-      "po_number": 372,
-      "deliver_to": "BRI",
+      "po_number": 404,
+      "deliver_to": "OVA",
       "polines": [
         {
-          "outstanding_quantity": 1,
+          "outstanding_quantity": 27,
           "item_reference": "",
-          "unit_cost_include_tax": 24.5,
-          "line_total": 24.5,
+          "unit_cost_include_tax": 4.49,
+          "line_total": 134.7,
           "line_number": 1,
-          "line_description": "Hop Scotch court",
-          "unit_cost_exclude_tax": 22.2727,
-          "order_quantity": 1,
-          "gl_account": "01-0190-00-01",
-          "outstanding_amount": 24.5,
-          "po_number": 372,
-          "unit_tax": 2.2273,
-          "tax_code": "TS",
+          "line_description": "Medicine Balls",
+          "unit_cost_exclude_tax": 4.0818,
+          "order_quantity": 30,
+          "gl_account": "02-1400-00-00",
+          "outstanding_amount": 121.23,
+          "po_number": 404,
+          "unit_tax": 0.4082,
+          "tax_code": "AO",
+          "supplier_reference": ""
+        },
+        {
+          "outstanding_quantity": 24,
+          "item_reference": "",
+          "unit_cost_include_tax": 5.9901,
+          "line_total": 179.7,
+          "line_number": 2,
+          "line_description": "Baseballs",
+          "unit_cost_exclude_tax": 5.4455,
+          "order_quantity": 30,
+          "gl_account": "02-1400-00-00",
+          "outstanding_amount": 143.76,
+          "po_number": 404,
+          "unit_tax": 0.5446,
+          "tax_code": "AO",
           "supplier_reference": ""
         }
       ],
-      "po_date": "20/03/2013",
-      "requisition_no": 208,
+      "po_date": "31/08/2017",
+      "requisition_no": "",
       "address": {
-        "addr3_text": "Next to the Train Station",
-        "name_text2": "Supply Specialists",
-        "country_text": "AUSTRALIA",
-        "name_text": "The ABC Stationers & Office",
-        "city_text": "SOUTH BRISBANE",
-        "post_code": 4101,
-        "addr1_text": "1234 Marshall Road",
-        "addr2_text": "Behind JB HiFi & Coles",
+        "addr3_text": "",
+        "name_text2": "",
+        "country_text": "",
+        "name_text": "Golfing Goodies Shop",
+        "city_text": "CAIRNS",
+        "post_code": 4322,
+        "addr1_text": "8876 Par Avenue",
+        "addr2_text": "",
         "state_code": "QLD",
-        "country_code": "AUS"
+        "country_code": ""
       },
-      "entered_on": "20/03/2013",
+      "entered_on": "31/08/2017",
       "printed_flag": "Y",
       "abn_text": "53 004 085 616",
-      "supplier_code": "ABCSTAT"
+      "supplier_code": "GOLF02"
     }
     ```
  
@@ -126,24 +136,24 @@
 
   ```javascript
     { 
-      "ponum":"372"
+      "ponum":"404"
     }
   ```
 
 * **Sample GET:** (With URL Encoded `token`)
 
   ```HTML
-    http://localhost/tassweb/api/?appcode=DEMOAP&v=2&method=GetPODetails&token=3blF%2FEI%2F8qLtX5ufgUMFzg%3D%3D&company=10
+    http://api.tasscloud.com.au/tassweb/api/?appcode=DEMOAP&v=2&method=GetPODetails&token=pBR1ko0FeNwVPmGE7NTwWA%3D%3D&company=10
   ```
   
 * **Sample POST:**
 
   ```HTML
-  <form id="postForm" name="postForm" method="POST" action="http://localhost/tassweb/tassweb/api/">
+  <form id="postForm" name="postForm" method="POST" action="http://api.tasscloud.com.au/tassweb/tassweb/api/">
      <input type="hidden" name="method" value="GetPODetails">
      <input type="hidden" name="appcode" value="DEMOAP">
      <input type="hidden" name="company" value="10">
      <input type="hidden" name="v" value="2">
-     <textarea name="token">3blF\/EI\/8qLtX5ufgUMFzg==</textarea>
+     <textarea name="token">pBR1ko0FeNwVPmGE7NTwWA==</textarea>
   </form>
   ```
