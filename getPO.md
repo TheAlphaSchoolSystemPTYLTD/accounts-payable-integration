@@ -4,6 +4,8 @@
 
 * **Version History:**
 
+    TASS v49.1 - Added more details including `order_quantity` and `outstanding_amount`
+
     TASS v48.0 - Method Added
 
 * **Version:**
@@ -33,16 +35,18 @@
     ```javascript
     "purchaseorders": [
       {
-        "outstanding_quantity": 28,
-        "po_number": 404,
+        "outstanding_quantity": 27,
         "item_reference": "",
         "unit_cost_include_tax": 4.49,
         "line_total": 134.7,
-        "unit_tax": 0.4082,
         "line_number": 1,
-        "line_description": "Line 1 details go here",
+        "line_description": "Medicine Balls",
         "unit_cost_exclude_tax": 4.0818,
+        "order_quantity": 30,
         "gl_account": "02-1400-00-00",
+        "outstanding_amount": 121.23,
+        "po_number": 404,
+        "unit_tax": 0.4082,
         "tax_code": "AO",
         "supplier_reference": ""
       }
