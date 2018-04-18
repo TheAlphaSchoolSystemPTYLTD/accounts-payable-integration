@@ -1,6 +1,6 @@
 **getCOA**
 ----
-  Returns an array of structured general ledger account data comprising account code, account description, account type, tax code in JSON format.
+  Returns an array of structured general ledger account data comprising account code, account description, account type, tax code, start year number, end year number, start period number, and end period number in JSON format.
 
 * **Version:**
 
@@ -31,10 +31,14 @@
     ```javascript
     "accounts": [
       {
+        "end_year_num": 2099,
         "desc_text": "Gross Tuition Fees",
         "def_tax_code": "EX",
         "type_ind": "I",
-        "acct_code": "01-0110-00-00"
+        "start_year_num": 1992,
+        "start_period_num": 1,
+        "acct_code": "01-0110-00-00",
+        "end_period_num": 12
       }
     ]
     ```
