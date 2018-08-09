@@ -18,7 +18,7 @@
 
    **Optional:**
 
-   none
+   `includeall [boolean]` - Return all tax codes.
 
    **Conditional:**
 
@@ -75,6 +75,13 @@
     ```javascript
     __invalid: {
       "ap": "ap must be true"
+    }
+    ```
+
+    `includeall` not a valid boolean
+    ```javascript
+    __invalid: {
+      "includeall": "Value is not a valid boolean."
     }
     ```
     
