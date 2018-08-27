@@ -4,6 +4,7 @@
 
 * **Version History:**
 
+    TASS v50.0 - Returned 'approved_by' and 'requested_by' for 'polines' details
     TASS v49.1 - Method Added
 
 * **Version:**
@@ -74,9 +75,11 @@
           "gl_account": "02-1400-00-00",
           "outstanding_amount": 121.23,
           "po_number": 404,
+          "requested_by": "peterr",
           "unit_tax": 0.4082,
           "tax_code": "AO",
-          "supplier_reference": ""
+          "supplier_reference": "",
+          "approved_by": "AJ"
         },
         {
           "outstanding_quantity": 24,
@@ -90,9 +93,11 @@
           "gl_account": "02-1400-00-00",
           "outstanding_amount": 143.76,
           "po_number": 404,
+          "requested_by": "peterr",
           "unit_tax": 0.5446,
           "tax_code": "AO",
-          "supplier_reference": ""
+          "supplier_reference": "",
+          "approved_by": "AJ"
         }
       ],
       "po_date": "31/08/2017",
