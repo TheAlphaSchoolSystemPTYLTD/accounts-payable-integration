@@ -4,7 +4,7 @@
 
 * **Version History:**
 
-    TASS v50.0 - Returned `authority` and `entered_by`
+    TASS v49.7 - Returned `authority` and `entered_by`
 
     TASS v49.1 - Added more details including `order_quantity` and `outstanding_amount`
 
