@@ -1,6 +1,6 @@
 **getCOA**
 ----
-  Returns an array of structured general ledger account data comprising account code, account description, account type, tax code, start year number, end year number, start period number, and end period number in JSON format.
+  Returns an array of structured general ledger account data comprising account code, account description, account type, tax code, start year number, end year number, start period number, end period number, account responsibility data and account annual budget data in JSON format.
 
 * **Version:**
 
@@ -18,7 +18,9 @@
 
    **Optional:**
 
-   none
+   `responsibility [string]` - valid options are "All", "Approvers" and "Raisers". Used to return account responsibility data.
+
+   `year [string]` - used to return account annual budget data
 
    **Conditional:**
 
@@ -32,14 +34,32 @@
     "accounts": [
       {
         "end_year_num": 2099,
+        "budget1_title": "Board Approved",
         "desc_text": "Gross Tuition Fees",
+        "start_period_num": 1,
+        "budget1_amt": 0,
+        "budget2_title": "Revised",
+        "end_period_num": 12,
+        "budget3_amt": 0,
         "def_tax_code": "EX",
         "type_ind": "I",
         "start_year_num": 1992,
-        "start_period_num": 1,
+        "budget3_title": "Half Year Reviewed",
+        "responsibilities": [
+          {
+            "initials": "",
+            "limit_amount": 100000,
+            "surname": "",
+            "salutation": "",
+            "responsibility_level": 3,
+            "preferred_name": "",
+            "email": "",
+            "given_names": ""
+          }
+        ],
         "acct_code": "01-0110-00-00",
-        "end_period_num": 12
-      }
+        "budget2_amt": 0
+        }
     ]
     ```
  
@@ -86,12 +106,27 @@
       "date": "Value is not a valid date."
     }
     ```
+
+    `responsibility` not a valid responsibility
+    ```javascript
+    __invalid: {
+      "responsibility": "Value is not a valid responsibility."
+    }
+    ```
+
+    `year` not a valid number
+    ```javascript
+    __invalid: {
+      "year": "Value is not a valid number."
+    }
     
 * **Sample Parameters:**
 
   ```javascript
     { 
-      "date":"12/7/2017"
+      "date":"01/01/2018"
+      ,"responsibility":"Approvers"
+      ,"year":"2018"
     }
   ```
 
