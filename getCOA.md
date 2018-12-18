@@ -2,6 +2,10 @@
 ----
   Returns an array of structured general ledger account data comprising account code, account description, account type, tax code, start year number, end year number, start period number, end period number, account responsibility data and account annual budget data in JSON format.
 
+* **Version History:**
+
+    TASS v50.1 - Returned annual budget data e.g. `budget1_title` and `budget1_amt` using `year` parameter and `responsibilities` data using `responsibility` parameter.
+
 * **Version:**
 
   2
