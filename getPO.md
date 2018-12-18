@@ -1,6 +1,6 @@
 **getPO**
 ----
-  Returns an array of structured purchase order data comprising PO number, line number, GL account, line description, outstanding quantity, tax code, line total, unit tax, unit cost excluding tax, and unit cost including tax in JSON format.
+  Returns an array of structured purchase order data comprising PO number, line number, GL account, line description, outstanding quantity, tax code, line total, unit tax, unit cost excluding tax, unit cost including tax, array of approvers and structure of the raiser in JSON format.
 
 * **Version History:**
 
@@ -28,6 +28,8 @@
 
    `ponum [integer]` - Purchase order number. Must be a number.
 
+   `status [string]` - Status of Purchase Order. Must be "All" or "Incomplete".
+
    **Conditional:**
 
    none
@@ -52,7 +54,26 @@
         "unit_tax": 0.4082,
         "tax_code": "AO",
         "supplier_reference": "",
-        "authority": "AJ"
+        "authority": "AJ",
+        "requisition_approvers": [
+          {
+            "initials": "A",
+            "surname": "O'Johnstonex",
+            "salutation": "Mr",
+            "responsibility_level": 3,
+            "preferred_name": "Alanx",
+            "email": "aj@tassweb.com.au",
+            "given_names": "Alan Pierre"
+          }
+        ],
+         "requisition_raiser": {
+            "initials": "G",
+            "surname": "Battersby",
+            "salutation": "Mrs",
+            "preferred_name": "Gwenith",
+            "email": "gb@tassweb.com.au",
+            "given_names": "Gwenderlain Peta"
+        }
       }
     ]
     ```
@@ -72,6 +93,13 @@
       "ponum": "Value is not a valid number."
     }
     ```
+
+    `status` not a valid status
+    ```javascript
+    __invalid: {
+      "status": "Value is not a valid status."
+    }
+    ```
     
 * **Sample Parameters:**
 
@@ -79,6 +107,7 @@
     { 
       "ponum":"404"
       ,"code":"GOLF02"
+      ,"status":"Incomplete"
     }
   ```
 
