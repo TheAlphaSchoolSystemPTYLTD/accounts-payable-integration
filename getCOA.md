@@ -20,7 +20,7 @@
 
    `responsibility [string]` - valid options are "All", "Approvers" and "Raisers". Used to return account responsibility data.
 
-   `year [string]` - used to return account annual budget data
+   `year [integer]` - used to return account annual budget data
 
    **Conditional:**
 
