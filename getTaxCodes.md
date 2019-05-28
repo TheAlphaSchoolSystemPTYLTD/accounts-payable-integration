@@ -18,7 +18,9 @@
 
    **Optional:**
 
-   `includeall [boolean]` - Return all tax codes.
+   `includeall [boolean]` - If `true` return all Tax Codes.
+   
+   If not defined or `false` return Tax Codes that are enabled for BAS as per the TASS.web program Finance > General Ledger > BAS Processing > GST Setups (Tab) > G10 & G11
 
    **Conditional:**
 
