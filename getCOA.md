@@ -111,6 +111,20 @@
     }
     ```
 
+    GL Period for `date` is not Set Up
+    ```javascript
+    __invalid: {
+      "error": "GL Period for #pr_date# is not Set Up"
+    }
+    ```
+
+    `date` not within the right range
+    ```javascript
+    __invalid: {
+      "error": "Date 2018-01-01 is out of range. Date is <> CURRENT_DATE +/- 365 days"
+    }
+    ```
+
     `responsibility` not a valid responsibility
     ```javascript
     __invalid: {
