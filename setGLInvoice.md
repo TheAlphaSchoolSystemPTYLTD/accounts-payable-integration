@@ -6,6 +6,10 @@
 
 	2
 
+* **Version History:**
+
+    TASS v51.4.095 - Added support for URL Encoded value for the attachment_file field. (Recommended)
+
 * **Method:**
 
 	`GET | POST`
