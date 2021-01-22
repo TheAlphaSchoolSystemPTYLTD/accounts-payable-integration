@@ -27,9 +27,16 @@
 * **Success Response:**
 
     ```javascript
-    "default": {
-      "year": 2017,
-      "period": 7
+    {
+      "default": {
+        "year": 2017,
+        "period": 7
+      },
+      "__tassversion": "01.053.3.000",
+      "token": {
+        "date": "12/7/2017",
+        "timestamp": "{ts '2021-01-21 15:17:55'}"
+      }
     }
     ```
  

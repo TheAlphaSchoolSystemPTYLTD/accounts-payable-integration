@@ -27,51 +27,74 @@
 * **Success Response:**
 
     ```javascript
-    "openyearsperiods": [
-      {
-        "year": 2017,
-        "period": 1
-      },
-      {
-        "year": 2017,
-        "period": 2
-      },
-      {
-        "year": 2017,
-        "period": 3
-      },
-      {
-        "year": 2017,
-        "period": 4
-      },
-      {
-        "year": 2017,
-        "period": 5
-      },
-      {
-        "year": 2017,
-        "period": 6
+    {
+      "openyearsperiods": [
+        {
+          "year": 2020,
+          "period": 1
+        },
+        {
+          "year": 2020,
+          "period": 2
+        },
+        {
+          "year": 2020,
+          "period": 3
+        },
+        {
+          "year": 2020,
+          "period": 4
+        },
+        {
+          "year": 2020,
+          "period": 5
+        },
+        {
+          "year": 2020,
+          "period": 6
+        },
+        {
+          "year": 2020,
+          "period": 7
+        },
+        {
+          "year": 2020,
+          "period": 8
+        },
+        {
+          "year": 2020,
+          "period": 10
+        },
+        {
+          "year": 2020,
+          "period": 12
+        }
+      ],
+      "__tassversion": "01.053.3.000",
+      "token": {
+        "timestamp": "{ts '2021-01-21 15:40:53'}",
+        "ap": true
       }
-    ]
+    }
     ```
  
 * **Error Response:**
 
-    `ap` not supplied
+    `ap` is not supplied
     ```javascript
     __invalid: {
       "ap": "field is required"
     }
     ```
     
-    `ap` not a valid boolean
+    `ap` is not a valid boolean
     ```javascript
     __invalid: {
       "ap": "Value is not a valid boolean."
     }
     ```
     
-    `ap` not true
+    `ap` is not true
     ```javascript
     __invalid: {
       "ap": "ap must be true"

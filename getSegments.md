@@ -27,56 +27,63 @@
 * **Success Response:**
 
     ```javascript
-    "segments": [
-      {
-        "desc_text": "School Section",
-        "segment_codes": {
-          "1": {
-            "flex_code": "00",
-            "desc_text": "Default"
+    {
+      "segments": [
+        {
+          "desc_text": "School Section",
+          "segment_codes": {
+            "1": {
+              "flex_code": "00",
+              "desc_text": "Default"
+            },
+            "2": {
+              "flex_code": "01",
+              "desc_text": "Junior School"
+            },
+            "3": {
+              "flex_code": "02",
+              "desc_text": "Senior School"
+            }
           },
-          "2": {
-            "flex_code": "01",
-            "desc_text": "Junior School"
-          },
-          "3": {
-            "flex_code": "02",
-            "desc_text": "Senior School"
-          }
+          "start_num": 1
         },
-        "start_num": 1
-      },
-      {
-        "desc_text": "Department",
-        "segment_codes": {
-          "1": {
-            "flex_code": "00",
-            "desc_text": "Default"
+        {
+          "desc_text": "Department",
+          "segment_codes": {
+            "1": {
+              "flex_code": "00",
+              "desc_text": "Default"
+            },
+            "2": {
+              "flex_code": 10,
+              "desc_text": "English Dept"
+            },
+            "3": {
+              "flex_code": 20,
+              "desc_text": "Science Dept"
+            },
+            "4": {
+              "flex_code": 30,
+              "desc_text": "Languages Dept"
+            },
+            "5": {
+              "flex_code": 40,
+              "desc_text": "Humanities"
+            },
+            "6": {
+              "flex_code": 50,
+              "desc_text": "IT Dept"
+            }
           },
-          "2": {
-            "flex_code": 10,
-            "desc_text": "English Dept"
-          },
-          "3": {
-            "flex_code": 20,
-            "desc_text": "Science Dept"
-          },
-          "4": {
-            "flex_code": 30,
-            "desc_text": "Languages Dept"
-          },
-          "5": {
-            "flex_code": 40,
-            "desc_text": "Humanities"
-          },
-          "6": {
-            "flex_code": 50,
-            "desc_text": "IT Dept"
-          }
-        },
-        "start_num": 9
+          "start_num": 9
+        }
+      ],
+      "__tassversion": "01.053.3.000",
+      "token": {
+        "startnum": "all",
+        "timestamp": "{ts '2021-01-21 15:59:01'}"
       }
-    ]
+    }
     ```
  
 * **Error Response:**

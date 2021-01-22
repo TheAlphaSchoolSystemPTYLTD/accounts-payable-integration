@@ -27,16 +27,23 @@
 * **Success Response:**
 
     ```javascript
-    "departments": [
-      {
-        "desc_text": "School Section",
-        "start_num": 1
-      },
-      {
-        "desc_text": "Department",
-        "start_num": 9
+    {
+      "departments": [
+        {
+          "desc_text": "School Section",
+          "start_num": 1
+        },
+        {
+          "desc_text": "Department",
+          "start_num": 9
+        }
+      ],
+      "__tassversion": "01.053.3.000",
+      "token": {
+        "deptconsol": true,
+        "timestamp": "{ts '2021-01-21 15:20:23'}"
       }
-    ]
+    }
     ```
  
 * **Error Response:**
