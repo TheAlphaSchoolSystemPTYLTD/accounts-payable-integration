@@ -65,8 +65,32 @@
 * **Success Response:**
 
     ```javascript
-    "success": "Invoice created successfully.",
-    "vouch_code": 673
+    {
+      "success": "Invoice created successfully.",
+      "vouch_code": 673,
+      "__tassversion": "01.053.3.000",
+      "token": {
+        "invoice_date": "31/08/2017",
+        "polines": [
+          {
+            "linenum": 1,
+            "quantity": 1,
+            "id": 1,
+            "ponum": 404
+          },
+          {
+            "linenum": 2,
+            "quantity": 2,
+            "id": 2,
+            "ponum": 404
+          }
+        ],
+        "timestamp": "{ts '2021-01-22 10:46:42'}",
+        "invoice_number": "testPO1",
+        "invoice_amount": 16.47,
+        "supplier_code": "GOLF02"
+      }
+    }
     ```
  
 * **Error Response:**

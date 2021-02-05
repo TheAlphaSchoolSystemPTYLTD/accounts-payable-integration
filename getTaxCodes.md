@@ -29,32 +29,39 @@
 * **Success Response:**
 
     ```javascript
-    "taxcodes": [
-      {
-        "desc_text": "Cred. Acquisition - Capital",
-        "calc_method_flag": "T",
-        "tax_per": 10,
-        "tax_code": "AC"
-      },
-      {
-        "desc_text": "Cred. Acquisition - Other",
-        "calc_method_flag": "T",
-        "tax_per": 10,
-        "tax_code": "AO"
-      },
-      {
-        "desc_text": "GST Free",
-        "calc_method_flag": "T",
-        "tax_per": 0,
-        "tax_code": "EX"
-      },
-      {
-        "desc_text": "Withholding Tax",
-        "calc_method_flag": "W",
-        "tax_per": 0,
-        "tax_code": "WHT"
+    {
+      "taxcodes": [
+        {
+          "desc_text": "Cred. Acquisition - Capital",
+          "calc_method_flag": "T",
+          "tax_per": 10,
+          "tax_code": "AC"
+        },
+        {
+          "desc_text": "Cred. Acquisition - Other",
+          "calc_method_flag": "T",
+          "tax_per": 10,
+          "tax_code": "AO"
+        },
+        {
+          "desc_text": "GST Free",
+          "calc_method_flag": "T",
+          "tax_per": 0,
+          "tax_code": "EX"
+        },
+        {
+          "desc_text": "Withholding Tax",
+          "calc_method_flag": "W",
+          "tax_per": 0,
+          "tax_code": "WHT"
+        }
+      ],
+      "__tassversion": "01.053.3.000",
+      "token": {
+        "timestamp": "{ts '2021-01-21 16:22:47'}",
+        "ap": true
       }
-    ]
+    }
     ```
  
 * **Error Response:**

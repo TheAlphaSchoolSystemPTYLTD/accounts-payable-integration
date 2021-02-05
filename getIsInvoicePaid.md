@@ -28,31 +28,44 @@ Returns a structure with one property to indicate if the specified invoice for t
 
 * **Success Response:**
 		
-		ColdFusion 2011
-		```javascript
-		"invoice_paid": "Yes"
-		```
+	ColdFusion 2011
+	```javascript
+	"invoice_paid": "Yes"
+	```
 
-		ColdFusion 2016
-		```javascript
-		"invoice_paid": true
-		```
+	ColdFusion 2016
+	```javascript
+	"invoice_paid": true
+	```
+
+	ColdFusion 2018
+	```javascript
+	{
+		"invoice_paid": true,
+		"__tassversion": "01.053.3.000",
+		"token": {
+			"timestamp": "{ts '2021-01-21 15:25:04'}",
+			"vouch_code": 12345,
+			"supplier_code": "ABC123"
+		}
+	}
+	```
  
 * **Error Response:**
 
-		`supplier_code` not supplied
-		```javascript
-		__invalid: {
-			"supplier_code": "field is required"
-		}
-		```
-		
-		`vouch_code` not supplied
-		```javascript
-		__invalid: {
-			"vouch_code": "field is required"
-		}
-		```
+	`supplier_code` is not supplied
+	```javascript
+	__invalid: {
+		"supplier_code": "field is required"
+	}
+	```
+	
+	`vouch_code` is not supplied
+	```javascript
+	__invalid: {
+		"vouch_code": "field is required"
+	}
+	```
 		
 * **Sample Parameters:**
 

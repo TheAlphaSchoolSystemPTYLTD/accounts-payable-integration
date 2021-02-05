@@ -29,9 +29,17 @@
 * **Success Response:**
 
     ```javascript
-    "default": {
-      "due_date": "06/01/2018",
-      "term_code": 30
+    {
+      "default": {
+        "due_date": "11/08/2017",
+        "term_code": 30
+      },
+      "__tassversion": "01.053.3.000",
+      "token": {
+        "date": "12/07/2017",
+        "code": "ABCSTAT",
+        "timestamp": "{ts '2021-01-21 15:14:00'}"
+      }
     }
     ```
  

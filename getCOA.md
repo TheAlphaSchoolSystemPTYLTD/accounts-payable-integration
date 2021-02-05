@@ -35,76 +35,85 @@
 * **Success Response:**
 
     ```javascript
-    "accounts": [
-      {
-        "end_year_num": 2099,
-        "budget1_title": "Board Approved",
-        "desc_text": "Gross Tuition Fees",
-        "start_period_num": 1,
-        "budget1_amt": 0,
-        "budget2_title": "Revised",
-        "end_period_num": 12,
-        "budget3_amt": 0,
-        "def_tax_code": "EX",
-        "type_ind": "I",
-        "start_year_num": 1992,
-        "budget3_title": "Half Year Reviewed",
-        "responsibilities": [
-          {
-            "initials": "",
-            "limit_amount": 100000,
-            "surname": "",
-            "salutation": "",
-            "responsibility_level": 3,
-            "preferred_name": "",
-            "email": "",
-            "given_names": ""
-          }
-        ],
-        "acct_code": "01-0110-00-00",
-        "budget2_amt": 0
+    {
+      "accounts": [
+        {
+          "end_year_num": 2099,
+          "budget1_title": "Board Approved",
+          "desc_text": "Gross Tuition Fees",
+          "start_period_num": 1,
+          "budget1_amt": 0,
+          "budget2_title": "Revised",
+          "end_period_num": 12,
+          "budget3_amt": 0,
+          "def_tax_code": "EX",
+          "type_ind": "I",
+          "start_year_num": 1992,
+          "budget3_title": "Half Year Reviewed",
+          "responsibilities": [
+            {
+              "initials": "",
+              "limit_amount": 100000,
+              "surname": "",
+              "salutation": "",
+              "responsibility_level": 3,
+              "preferred_name": "",
+              "email": "",
+              "given_names": ""
+            }
+          ],
+          "acct_code": "01-0110-00-00",
+          "budget2_amt": 0
         }
-    ]
+      ],
+      "__tassversion": "01.053.3.000",
+      "token": {
+        "date": "01/01/2021",
+        "year": 2021,
+        "timestamp": "{ts '2021-01-21 14:54:28'}",
+        "responsibility": "Approvers"
+      }
+    }
     ```
  
 * **Error Response:**
 
-    `start_num` not supplied when `flex_code` supplied
+    `start_num` is not supplied when `flex_code` supplied
     ```javascript
     __invalid: {
       "start_num": "field is required"
     }
     ```
 
-    `start_num` not a valid integer
+    `start_num` is not a valid integer
     ```javascript
     __invalid: {
       "start_num": "Value is not a valid integer."
     }
     ```
 
-    `start_num` not greater than 0
+    `start_num` is not greater than 0
     ```javascript
     __invalid: {
       "start_num": "start_num must be greater than 0"
     }
     ```
 
-    `flex_code` not supplied when `start_num` supplied
+    `flex_code` is not supplied when `start_num` supplied
     ```javascript
     __invalid: {
       "flex_code": "field is required"
     }
     ```
 
-    `date` not supplied
+    `date` is not supplied
     ```javascript
     __invalid: {
       "date": "field is required"
     }
     ```
     
-    `date` not a valid date
+    `date` is not a valid date
     ```javascript
     __invalid: {
       "date": "Value is not a valid date."
@@ -118,33 +127,34 @@
     }
     ```
 
-    `date` not within the right range
+    `date` is not within the right range
     ```javascript
     __invalid: {
-      "error": "Date 2018-01-01 is out of range. Date is <> CURRENT_DATE +/- 365 days"
+      "error": "Date 2020-01-01 is out of range. Date is <> CURRENT_DATE +/- 365 days"
     }
     ```
 
-    `responsibility` not a valid responsibility
+    `responsibility` is not a valid responsibility
     ```javascript
     __invalid: {
       "responsibility": "Value is not a valid responsibility."
     }
     ```
 
-    `year` not a valid number
+    `year` is not a valid number
     ```javascript
     __invalid: {
       "year": "Value is not a valid number."
     }
+    ```
     
 * **Sample Parameters:**
 
   ```javascript
     { 
-      "date":"01/01/2018"
+      "date":"01/01/2021"
       ,"responsibility":"Approvers"
-      ,"year":"2018"
+      ,"year":"2021"
     }
   ```
 

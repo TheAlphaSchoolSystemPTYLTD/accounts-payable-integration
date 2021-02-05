@@ -69,8 +69,47 @@
 * **Success Response:**
 
 	```javascript
-	"success": "Invoice created successfully.",
-	"vouch_code": 672
+	{
+		"success": "Invoice created successfully.",
+		"__tassversion": "01.053.3.000",
+		"vouch_code": 968,
+		"token": {
+			"invoice_date": "27/07/2017",
+			"timestamp": "{ts '2021-01-21 16:50:36'}",
+			"invoice_number": "test000",
+			"invoice_amount": 2,
+			"comment_1": "test creating invoices",
+			"gldistributions": [
+				{
+					"desc_text": "first distribution",
+					"dist_amount": 1.24,
+					"tax_amount": 0.04,
+					"dist_net": 1.2,
+					"account_code": "01-1330-00-00",
+					"dist_tax": 0.04,
+					"acct_code": "01-1330-00-00",
+					"line_num": 1,
+					"id": 1,
+					"purch_desc": "first distribution",
+					"tax_code": "AO"
+				},
+				{
+					"desc_text": "second distribution",
+					"dist_amount": 0.76,
+					"tax_amount": 0.02,
+					"dist_net": 0.74,
+					"account_code": "01-1330-00-00",
+					"dist_tax": 0.02,
+					"acct_code": "01-1330-00-00",
+					"line_num": 2,
+					"id": 2,
+					"purch_desc": "second distribution",
+					"tax_code": "WHT"
+				}
+			],
+			"supplier_code": "ABCSTAT"
+		}
+	}
 	```
  
 * **Error Response:**
@@ -346,7 +385,7 @@
 	```javascript
 	{
 		"supplier_code":"ABCSTAT"
-		,"invoice_number":"test1"
+		,"invoice_number":"test000"
 		,"invoice_date":"27/07/2017"
 		,"invoice_amount":"2"
 		,"comment_1":"test creating invoices"
