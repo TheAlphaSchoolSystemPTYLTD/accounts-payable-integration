@@ -6,6 +6,8 @@
 
     TASS v54.0 - Method Added
 
+    TASS v55, v53.3 (PR7) - Add new property "override_closed_period"
+
 * **Version:**
 
 	2
@@ -46,6 +48,8 @@
 
 	`unit_tax_amt [string]` - Unit Tax.
 
+	`override_closed_period [string]` - Override Closed Period.
+
 	**Conditional:**
 
 	None
@@ -68,6 +72,7 @@
 					"id":1,
 					"unit_cost_amt":1.1111,
 					"accept_budget_warning":"Y",
+					"override_closed_period":"Y",
 					"vend_code":"00012"
 				}
 			],
@@ -125,6 +130,13 @@
 	__invalid: {
 		"accept_budget_warning": "Value is invalid."
 	}
+	```
+
+	`override_closed_period` is not Y or N
+	```javascript
+	__invalid: {
+		"override_closed_period": "Value is invalid."
+	} 
 	```
 
 	`vend_code` exceeds 8 characters
@@ -331,7 +343,8 @@
 				"order_qty":1,
 				"unit_cost_amt":1.1111,
 				"cost_inc_tax_flg":"Y",
-				"accept_budget_warning":"Y"
+				"accept_budget_warning":"Y",
+				"override_closed_period":"Y"
 			}
 		]
 	}
