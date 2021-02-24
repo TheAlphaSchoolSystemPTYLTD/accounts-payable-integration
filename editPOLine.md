@@ -6,7 +6,7 @@
 
     TASS v54.0 - Method Added
 
-    TASS v55, v53.3 (PR6) - Add new property "override_closed_period"
+    TASS v55, v53.3 (PR7) - Add new property "override_closed_period"
 
 * **Version:**
 
