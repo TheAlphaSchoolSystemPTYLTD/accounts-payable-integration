@@ -44,15 +44,13 @@
 
 	`oem_text [string]` - Supplier Reference.
 
-	`tax_code [string]` - Tax Code.
-
 	`unit_tax_amt [string]` - Unit Tax.
 
 	`override_closed_period [string]` - Override Closed Period.
 
 	**Conditional:**
 
-	None
+	`tax_code [string]` - Tax Code. Required where there is no Default Tax Code applied to the General Ledger Account.
 
 * **Success Response:**
 
