@@ -26,15 +26,19 @@
 
    `invoice_amount [decimal]` - Invoice Amount
 
-   `id [string]` - Unique Identity of PO Line
-
-   `ponum [number]` - PO Number of PO Line
-
-   `linenum [number]` - Line Number of PO Line
-
-   `quantity [decimal]` - Quantity of PO Line
-
    `polines [array]` - Array of PO Lines
+   
+               for each poline these fields are required:
+
+                   `id [string]` - Unique Identity of PO Line
+
+                   `ponum [number]` - PO Number of PO Line
+
+                   `linenum [number]` - Line Number of PO Line
+
+                   `quantity [decimal]` - Quantity of PO Line
+
+
 
    **Optional:**
    
