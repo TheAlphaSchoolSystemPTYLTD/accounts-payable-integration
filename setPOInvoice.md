@@ -30,8 +30,6 @@
    
                for each poline these fields are required:
 
-                   `id [string]` - Unique Identity of PO Line
-
                    `ponum [number]` - PO Number of PO Line
 
                    `linenum [number]` - Line Number of PO Line
