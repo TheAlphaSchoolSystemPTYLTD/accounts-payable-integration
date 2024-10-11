@@ -34,6 +34,8 @@
 
    `quantity [decimal]` - Quantity of PO Line
 
+   `polines [array]` - Array of PO Lines
+
    **Optional:**
    
    `year [integer]` - Year
@@ -49,8 +51,6 @@
    `comment_1 [string]` - Comment 1
 
    `comment_2 [string]` - Comment 2
-
-   `polines [array]` - Array of PO Lines
 
    **Conditional:**
 
