@@ -19,7 +19,7 @@ supplier_code [string] - Supplier Code
 
 invoice_number [string] - Invoice Number
 
-invoice_date [date dd/mm/yyyy] - Invoice Date
+<invoice_date> [date dd/mm/yyyy] - Invoice Date
 
 invoice_amount [decimal] - Invoice Amount
 
