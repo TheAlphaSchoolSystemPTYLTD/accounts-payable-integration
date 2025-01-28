@@ -1,6 +1,6 @@
 **setGLCredit**
 ----
-	Returns "Success" if the crdit successfully created, or a structure of invalid validations "__invalid" if the credit is unsuccessfully created.
+	Returns "Success" if the crdit successfully created and return debit_num, or a structure of invalid validations "__invalid" if the credit is unsuccessfully created.
 
 * **Version:**
 
@@ -67,34 +67,51 @@
 * **Success Response:**
 ```javascript
 {
-  "success": "Credit created successfully.",
+  "success": "Credit Record created successfully.",
+  "debit_num": 145,
   "__tassversion": "01.000.043.0",
   "token": {
-    "given_name": "Chit HOI",
-    "credit_amount": 100,
-    "sex": "M",
-    "application_id": "TESTEST1556",
-    "comment_1": "comment 123",
-    "par_surname": "Namu-Sleeth",
-    "credit_date": "2025-01-20",
-    "stud_surname": "HSU",
-    "f_p2_sex": "M",
-    "entry_ygrp": 8,
-    "credit_number": 98766,
-    "batch_num": 612345684,
-    "preferred_name": "Mr B Te Namu-Sleeth & Miss D Galvin",
-    "dob": "1995-09-23",
-    "par_name": "Mr Namu-Sleeth and this is bigger than 30 characters",
-    "f_name": "Miss D Galvin",
-    "boarder": "N",
-    "doa": "2019-09-29",
-    "m_p1_sex": "M",
-    "timestamp": "{ts '2025-01-28 13:07:30'}",
-    "m_name": "Mr B Te Namu-Sleeth",
-    "entry_yr": 2024,
-    "supplier_code": "00012"
+    "credit_amount": 2,
+    "comment_2": "test creating credit c2",
+    "comment_1": "test creating credit",
+    "external_url": "https://www.news.com.au/",
+    "credit_date": "08/11/2024",
+    "year": 2024,
+    "credit_number": "Cr0A0020",
+    "period": 11,
+    "timestamp": "{ts '2025-01-29 08:18:58'}",
+    "external_target": "News",
+    "gldistributions": [
+      {
+        "desc_text": "first distribution",
+        "dist_amount": 1.24,
+        "tax_amount": 0.04,
+        "dist_net": 1.2,
+        "account_code": "01-1330-00-00",
+        "dist_tax": 0.04,
+        "acct_code": "01-1330-00-00",
+        "line_num": 1,
+        "id": 1,
+        "purch_desc": "first distribution",
+        "tax_code": "AO"
+      },
+      {
+        "desc_text": "second distribution",
+        "dist_amount": 0.76,
+        "tax_amount": 0.02,
+        "dist_net": 0.74,
+        "account_code": "01-1330-00-00",
+        "dist_tax": 0.02,
+        "acct_code": "01-1330-00-00",
+        "line_num": 2,
+        "id": 2,
+        "purch_desc": "second distribution",
+        "tax_code": "WHT"
+      }
+    ],
+    "supplier_code": "ABCSTAT"
   }
- }
+}
 ```
  
 * **Error Response:**
@@ -369,28 +386,35 @@
 
 ```javascript
 	{
-    "application_id": "TESTEST1556",
-    "stud_surname": "HSU",
-    "given_name": "Chit HOI",
-    "preferred_name": "Mr B Te Namu-Sleeth & Miss D Galvin",
-    "dob": "1995-09-23",
-    "sex": "M",
-    "entry_yr": "2024",
-    "entry_ygrp": 8,
-    "boarder": "N",
-    "doa": "2019-09-29",
-    "credit_number": "98766",
-    "credit_amount": "100.00", 
-    "supplier_code": "00012",
-    "credit_date": "2025-01-20",
-    "comment_1": "comment 123"
-    "par_surname": "Namu-Sleeth",
-    "par_name": "Mr Namu-Sleeth and this is bigger than 30 characters",
-    "m_name": "Mr B Te Namu-Sleeth",
-    "f_name": "Miss D Galvin",
-    "m_p1_sex": "M",
-    "f_p2_sex": "M",
-    "batch_num": "612345684"
+   {
+    "supplier_code":"ABCSTAT"
+    ,"credit_number":"Cr000019"
+    ,"credit_date":"08/11/2024"
+    ,"credit_amount":"2"
+    ,"comment_1":"test creating credit"
+    ,"gldistributions":[
+        {
+            "id":"1"
+            ,"account_code":"01-1330-00-00"
+            ,"desc_text":"first distribution"
+            ,"dist_amount":"1.24"
+            ,"tax_amount":"0.04"
+            ,"tax_code":"AO"
+        },{
+            "id":"2"
+            ,"account_code":"01-1330-00-00"
+            ,"desc_text":"second distribution"
+            ,"dist_amount":"0.76"
+            ,"tax_amount":"0.02"
+            ,"tax_code":"WHT"
+        }
+    ]
+    ,"year":"2024"
+    ,"period":"11"
+    ,"comment_2":"test creating credit c2"
+    ,"external_url":"https://www.news.com.au/"
+    ,"external_target":"News"
+ }"
 }
 ```
 
