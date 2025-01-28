@@ -1,6 +1,6 @@
 **setGLCredit**
 ----
-	Returns "Success" and document number "vouch_code" if the invoice successfully created, or a structure of invalid validations "__invalid" if the invoice is unsuccessfully created.
+	Returns "Success" if the crdit successfully created, or a structure of invalid validations "__invalid" if the credit is unsuccessfully created.
 
 * **Version:**
 
@@ -65,50 +65,37 @@
 `external_target [string]` - External Link title. Length must be between 1 and 50 characters.
 
 * **Success Response:**
-
-	```javascript
-	{
-		"success": "Invoice created successfully.",
-		"__tassversion": "01.053.3.000",
-		"vouch_code": 968,
-		"token": {
-			"invoice_date": "27/07/2017",
-			"timestamp": "{ts '2021-01-21 16:50:36'}",
-			"invoice_number": "test000",
-			"invoice_amount": 2,
-			"comment_1": "test creating invoices",
-			"gldistributions": [
-				{
-					"desc_text": "first distribution",
-					"dist_amount": 1.24,
-					"tax_amount": 0.04,
-					"dist_net": 1.2,
-					"account_code": "01-1330-00-00",
-					"dist_tax": 0.04,
-					"acct_code": "01-1330-00-00",
-					"line_num": 1,
-					"id": 1,
-					"purch_desc": "first distribution",
-					"tax_code": "AO"
-				},
-				{
-					"desc_text": "second distribution",
-					"dist_amount": 0.76,
-					"tax_amount": 0.02,
-					"dist_net": 0.74,
-					"account_code": "01-1330-00-00",
-					"dist_tax": 0.02,
-					"acct_code": "01-1330-00-00",
-					"line_num": 2,
-					"id": 2,
-					"purch_desc": "second distribution",
-					"tax_code": "WHT"
-				}
-			],
-			"supplier_code": "ABCSTAT"
-		}
-	}
-	```
+```javascript
+{
+  "success": "Credit created successfully.",
+  "__tassversion": "01.000.043.0",
+  "token": {
+    "given_name": "Chit HOI",
+    "credit_amount": 100,
+    "sex": "M",
+    "application_id": "TESTEST1556",
+    "comment_1": "comment 123",
+    "par_surname": "Namu-Sleeth",
+    "credit_date": "2025-01-20",
+    "stud_surname": "HSU",
+    "f_p2_sex": "M",
+    "entry_ygrp": 8,
+    "credit_number": 98766,
+    "batch_num": 612345684,
+    "preferred_name": "Mr B Te Namu-Sleeth & Miss D Galvin",
+    "dob": "1995-09-23",
+    "par_name": "Mr Namu-Sleeth and this is bigger than 30 characters",
+    "f_name": "Miss D Galvin",
+    "boarder": "N",
+    "doa": "2019-09-29",
+    "m_p1_sex": "M",
+    "timestamp": "{ts '2025-01-28 13:07:30'}",
+    "m_name": "Mr B Te Namu-Sleeth",
+    "entry_yr": 2024,
+    "supplier_code": "00012"
+  }
+ }
+```
  
 * **Error Response:**
 
@@ -164,14 +151,14 @@
 	`credit_number` not unique
 	```javascript
 	__invalid: {
-		"invoice_number": "Credit Number already used."
+		"credit_number": "Credit Number already used."
 	}
 	```
 
 	`credit_number` exceed 20 characters
 	```javascript
 	__invalid: {
-		"invoice_number": "Value exceeds 20 characters."
+		"credit_number": "Value exceeds 20 characters."
 	}
 	```
 
@@ -192,21 +179,21 @@
 	`credit_number` less than or equal 0.00
 	```javascript
 	__invalid: {
-		"invoice_amount": "Credit Amount is invalid."
+		"credit_amount": "Credit Amount is invalid."
 	}
 	```
 
 	`credit_number` has more than 2 decimal points
 	```javascript
 	__invalid: {
-		"invoice_amount": "Value has more than 2 decimal points."
+		"credit_amount": "Value has more than 2 decimal points."
 	}
 	```
 
 	`credit_number` greater than Available Credit from "vendor" table 
 	```javascript
 	__invalid: {
-		"invoice_amount": "Credit Amount exceeds Credit Limit."
+		"credit_amount": "Credit Amount exceeds Credit Limit."
 	}
 	```
 
@@ -217,10 +204,10 @@
 	}
 	```
 
-	`due_date` less than `invoice_date` when supplied 
+	`due_date` less than `credit_date` when supplied 
 	```javascript
 	__invalid: {
-		"due_date": "Due Date is less than Invoice Date."
+		"due_date": "Due Date is less than credit Date."
 	}
 	```
 
@@ -382,7 +369,7 @@
 
 ```javascript
 	{
-    "application_id": "TESTEST0001",
+    "application_id": "TESTEST1556",
     "stud_surname": "HSU",
     "given_name": "Chit HOI",
     "preferred_name": "Mr B Te Namu-Sleeth & Miss D Galvin",
@@ -392,6 +379,11 @@
     "entry_ygrp": 8,
     "boarder": "N",
     "doa": "2019-09-29",
+    "credit_number": "98766",
+    "credit_amount": "100.00", 
+    "supplier_code": "00012",
+    "credit_date": "2025-01-20",
+    "comment_1": "comment 123"
     "par_surname": "Namu-Sleeth",
     "par_name": "Mr Namu-Sleeth and this is bigger than 30 characters",
     "m_name": "Mr B Te Namu-Sleeth",
@@ -412,10 +404,10 @@ https://local.tassweb.net.au/tassweb/api/?method=setEnrolment&appcode=API04&comp
 
 	```HTML
 	<form id="postForm" name="postForm" method="POST" action="http://api.tasscloud.com.au/tassweb/api/">
-		 <input type="hidden" name="method" value="setGLInvoice">
+		 <input type="hidden" name="method" value="setGLCredit">
 		 <input type="hidden" name="appcode" value="DEMOAP">
 		 <input type="hidden" name="company" value="10">
 		 <input type="hidden" name="v" value="2">
 		 <textarea name="token">BJVvYXC0We4Dtvp6Q49RqhBeAi6uqpTQ9t/KI9ZAFpCMeVXIFlDU5yNQIeYME+YLXgYA69RTUjXjLeVBetN6CaFMdPCKMWBXD+kkt0/uht0suYrSDONP6mx/bt4WGgNOD5YoIYRNiIVDw2Qn2Oi5YodaEUgtGJohUJMzy3tqsX+raZk3j7d77okDCjb7MeFJ0DcupqUoRiGjE39415HTfPgNc6R6BY9wt7SJsj4yOPBrIxHQVS8Yy6gZ3nZgsJ5rhcdkB6eCI6b3FJ31s6vsVcbVu5NBY8AF1qqjWLMazduISzEBwRDsofXfJjo1KLX59R410bmbrF5Z7QZfEfE/lettTWOyb4EgdhBoC3v0aLOfF6Bt12AFXDo2VGbgryceeOLAscp/Fr9ttH42hClBtWsxFU1N5dDENUsVHOwWcfCxd7aTtc0xjvaEYJWcZrRRZa1yrIvgeWaDk0LVxM5ePcT+ltdrymgmxmZYgxdiYC1qQDcNXDx9hN7yKeZDUztwGA0yl2iXW8aBXAy5hRnztR0TrREyOba26mUHxUJO7tfpIyOrpPbE0nR18vtCZ+inbvyqN9adpZhQPByG2XD9M6MoYdmBCc3Duv9qb+Ia0A8=</textarea>
 	</form>
-	```
+```
