@@ -26,6 +26,8 @@
 
    `year [integer]` - used to return account annual budget data
 
+   `excludeControlAccounts [boolean]` - used to include/exclude control account data from being returned. Default, if not provided, is true.
+
    **Conditional:**
 
    `start_num [integer]` - `start_num` required if `flex_code` supplied
