@@ -6,6 +6,10 @@
 
   2
 
+* **Version History:**
+
+    Added `bank_sort_code`, `vat_number`, `bank_iban` and `bank_bic_code` to the response for UK/IE supplier bank details (TASS-13812)
+
 * **Method:**
 
   `GET | POST`
@@ -112,6 +116,8 @@
           "fax_text": "07 3229 2928",
           "tele_text": "07 3229 2929",
           "bank_acct_code": 123131333,
+          "bank_bic_code": "AIBKIE2D",
+          "bank_iban": "IE29AIBK93115212345678",
           "extension_text": "",
           "term_code": 28,
           "last_payment_date": "29/02/2016",
@@ -119,8 +125,10 @@
           "web_address": "",
           "active_flg": true,
           "bank_bsb_code": "212-444",
+          "bank_sort_code": "12-34-56",
           "bank_code": "COM",
           "abn_text": "53 004 085 616",
+          "vat_number": "GB123 4567 10",
           "addr2_text": "",
           "pu_phone": "",
           "mobile_text": "",
